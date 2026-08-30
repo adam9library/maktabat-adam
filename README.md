@@ -1,0 +1,22 @@
+# مكتبة آدم — Node.js final demo
+
+هذه النسخة تعمل بـ Node.js + Express + Supabase، وليست Expo.
+
+## التشغيل
+```powershell
+npm install
+npm start
+```
+ثم افتح:
+`http://localhost:3000`
+
+## الإصلاحات في هذه النسخة
+- إصلاح مسار إتمام الطلب والدفع مع منع الضغط المكرر وإظهار الخطأ الحقيقي عند فشل الحفظ.
+- إصلاح إنشاء الحساب مع التحقق من البريد ورقم الهاتف ورسائل أوضح، مع دعم تأكيد البريد في Supabase.
+- الإبقاء على ربط الطلب بالمستخدم عند توفر `user_id` في جدول `orders`، مع الرجوع تلقائياً للمخطط القديم إذا لم يكن العمود موجوداً.
+- جعل اسم «مكتبة آدم» في الهيدر بخط ثخين وواضح مع الشعار بجانبه.
+- الإبقاء على Node.js + Express + Supabase والتصميم والمزايا الموجودة وعدم تحويل المشروع إلى Expo.
+- الإبقاء على واجهة الهاتف والتابلت كما هي في النسخة المرفقة وعدم تغيير الوظائف الأخرى.
+
+
+Payment flow: QR payment opens from the payment button. The QR is a manual bank-payment flow; the site does not claim automatic bank verification. After the user confirms payment, the order is saved in Supabase.
